@@ -1,0 +1,11 @@
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\bin\Debug\netcoreapp2.1\DuckCode.deps.json
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\bin\Debug\netcoreapp2.1\DuckCode.runtimeconfig.json
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\bin\Debug\netcoreapp2.1\DuckCode.runtimeconfig.dev.json
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\bin\Debug\netcoreapp2.1\DuckCode.dll
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\bin\Debug\netcoreapp2.1\DuckCode.pdb
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\obj\Debug\netcoreapp2.1\DuckCode.csprojAssemblyReference.cache
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\obj\Debug\netcoreapp2.1\DuckCode.csproj.CoreCompileInputs.cache
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\obj\Debug\netcoreapp2.1\DuckCode.AssemblyInfoInputs.cache
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\obj\Debug\netcoreapp2.1\DuckCode.AssemblyInfo.cs
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\obj\Debug\netcoreapp2.1\DuckCode.dll
+C:\Users\Rick van Melis\Documents\projects\DuckCode\DuckCode\obj\Debug\netcoreapp2.1\DuckCode.pdb
