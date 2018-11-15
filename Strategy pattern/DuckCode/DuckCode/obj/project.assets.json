@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rick van Melis\\Documents\\projects\\DuckCode\\DuckCode\\DuckCode.csproj",
+      "projectUniqueName": "C:\\Users\\Rick van Melis\\Documents\\Git\\Design-patterns\\Strategy pattern\\DuckCode\\DuckCode\\DuckCode.csproj",
       "projectName": "DuckCode",
-      "projectPath": "C:\\Users\\Rick van Melis\\Documents\\projects\\DuckCode\\DuckCode\\DuckCode.csproj",
+      "projectPath": "C:\\Users\\Rick van Melis\\Documents\\Git\\Design-patterns\\Strategy pattern\\DuckCode\\DuckCode\\DuckCode.csproj",
       "packagesPath": "C:\\Users\\Rick van Melis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rick van Melis\\Documents\\projects\\DuckCode\\DuckCode\\obj\\",
+      "outputPath": "C:\\Users\\Rick van Melis\\Documents\\Git\\Design-patterns\\Strategy pattern\\DuckCode\\DuckCode\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -722,7 +722,6 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
