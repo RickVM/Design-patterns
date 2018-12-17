@@ -19,7 +19,7 @@ If a pattern or concept is too familiar or easy I might skip it.
 I will use the book Head First Design patterns by O'Reilly to study these patterns.  
 The book explains the patterns in Java, I will implement them in either Java or .Net depending on what I feel like.  
 
-  
+
 The book explains the following Design patterns in chronological order:
 1. The strategy pattern
 2. The observer pattern
