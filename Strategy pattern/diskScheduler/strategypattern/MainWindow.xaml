@@ -1,0 +1,41 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:strategypattern"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="strategypattern.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="319.045" Width="296.406">
+    <Window.Resources>
+        <System:Double x:Key="driveSize">1024000</System:Double>
+    </Window.Resources>
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.413"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="56" Margin="131,40,0,0" VerticalAlignment="Top" Width="148">
+            <RadioButton x:Name="firstComeFirstServeBtn" Content="First Come First Serve" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="FirstComeFirstServeBtn_Checked" GroupName="strategy" IsChecked="True"/>
+            <RadioButton x:Name="ShortestSeekTimeButton" Content="Shortest Seek Time" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="strategy" Checked="ShortestSeekTimeButton_Checked"/>
+            <RadioButton x:Name="scanButton" Content="SCAN" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="strategy" Checked="ScanButton_Checked"/>
+        </Menu>
+        <Label x:Name="label" Content="Strategy type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="131,9,0,0"/>
+        <Button x:Name="randomRequestBtn" Content="Randomize request" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="111" Click="RandomRequestBtn_Click" Height="25"/>
+        <Button x:Name="submitRequestBtn" Content="Submit request" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="111" Click="SubmitRequestBtn_Click" Height="25"/>
+        <TextBox x:Name="requestTextBox" HorizontalAlignment="Left" Height="21" Margin="8,109,0,0" TextWrapping="Wrap" Text="Request" VerticalAlignment="Top" Width="269"/>
+        <Label x:Name="requestLabel" Content="Request" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,83,0,0"/>
+        <TextBox x:Name="RequestedSectorsTextBox" HorizontalAlignment="Left" Height="22" Margin="8,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269"/>
+        <Label x:Name="requestsLabel" Content="Requested sectors" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,135,0,0"/>
+        <Slider x:Name="headSlider" HorizontalAlignment="Left" Margin="8,260,0,0" VerticalAlignment="Top" Width="267" IsSelectionRangeEnabled="True" Maximum="1024000"/>
+        <Label x:Name="headLabel" Content="Head position:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,234,0,0"/>
+        <Label x:Name="headPositionLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,234,0,0"/>
+        <TextBox x:Name="queueTextBox" HorizontalAlignment="Left" Height="22" Margin="8,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269"/>
+        <Label x:Name="queueLabel" Content="Queue" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,183,0,0"/>
+
+    </Grid>
+</Window>
