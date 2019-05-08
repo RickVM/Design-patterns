@@ -58,6 +58,7 @@
     <Compile Include="IQueueHandler.cs" />
     <Compile Include="FirstComeFirstServe.cs" />
     <Compile Include="request.cs" />
+    <Compile Include="Scan.cs" />
     <Compile Include="shortestSeekTime.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

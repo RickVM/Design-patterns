@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace strategypattern
+namespace diskScheduler
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -26,7 +26,7 @@ namespace strategypattern
         Random randomGenerator;
         int head;
         DispatcherTimer timer;
-        int driveSize = 1024000; // Also edit slider range in window
+        static int driveSize; // Also edit slider range in window
         int headSpeed = 1000;
 
         IQueueHandler queueHandler;
@@ -37,31 +37,32 @@ namespace strategypattern
             requests = new List<Request>();
             queue = new List<int>();
             randomGenerator = new Random();
+            driveSize = int.Parse(FindResource("driveSize").ToString());
             head = 0;
 
             queueHandler = new FirstComeFirstServe();
-            updateHeadDisplay();
+            UpdateHeadDisplay();
 
             // Start UI timer
             timer = new DispatcherTimer();
-            timer.Tick += new EventHandler(handleTick);
+            timer.Tick += new EventHandler(HandleTick);
             timer.Interval = new TimeSpan(0, 0, 0, 0, 4);
             timer.Start();
         }
 
-        public void handleTick(object sender, EventArgs e)
+        public void HandleTick(object sender, EventArgs e)
         {
             if(queue.Count > 0)
             {
                 // Move towards requested sector
                 int nextSector = queue[0];
                 // Account for over / underscan.
-                if(valsAreWithin(head, nextSector, headSpeed))
+                if(ValsAreWithin(head, nextSector, headSpeed))
                 {
                     head = nextSector;
                     requests.RemoveAll(request => request.sector == head);
                     UpdateRequestedSectorsTextBox();
-                    updateQueue();
+                    UpdateQueue();
                 } else
                 {
                     if (nextSector > head)
@@ -76,7 +77,7 @@ namespace strategypattern
                     }
                 }
             }
-            updateHeadDisplay();
+            UpdateHeadDisplay();
         }
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace strategypattern
         /// <param name="sector"></param>
         /// <param name="distance"></param>
         /// <returns></returns>
-        private bool valsAreWithin(int x, int y, int distance)
+        private bool ValsAreWithin(int x, int y, int distance)
         {
             int valDistance = x - y;
             if(valDistance > (0 - distance) && valDistance < distance)
@@ -101,26 +102,28 @@ namespace strategypattern
 
         private void FirstComeFirstServeBtn_Checked(object sender, RoutedEventArgs e)
         {
-            updateQueueHandler(new FirstComeFirstServe());
+            UpdateQueuHandler(new FirstComeFirstServe());
             Console.WriteLine("FCFS strategy enabled.");
         }
 
         private void ShortestSeekTimeButton_Checked(object sender, RoutedEventArgs e)
         {
-            updateQueueHandler(new ShortestSeekTime());
+            UpdateQueuHandler(new ShortestSeekTime());
             Console.WriteLine("SST strategy enabled.");
         }
 
         private void ScanButton_Checked(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("SCAN strategy enabled.");
+            UpdateQueuHandler(new Scan());
         }
 
-        private void updateQueueHandler(IQueueHandler handler)
+        private void UpdateQueuHandler(IQueueHandler handler)
         {
             queueHandler = handler;
-            updateQueue();
+            UpdateQueue();
         }
+
         private void RandomRequestBtn_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("Random request generated");
@@ -133,10 +136,10 @@ namespace strategypattern
             string requestText = requestTextBox.GetLineText(0);
             try
             {
-                Request request = new Request(parseSector(requestText));
+                Request request = new Request(ParseSector(requestText));
                 requests.Add(request);
                 UpdateRequestedSectorsTextBox();
-                updateQueue();
+                UpdateQueue();
             }
             catch(Exception err)
             {
@@ -145,7 +148,7 @@ namespace strategypattern
 
         }
 
-        private int parseSector(string sector)
+        private int ParseSector(string sector)
         {
             int s = int.Parse(sector);
             if(s > driveSize)
@@ -155,7 +158,7 @@ namespace strategypattern
             return  s;
         }
 
-        private void updateQueue()
+        private void UpdateQueue()
         {
             if(requests == null)
             {
@@ -163,10 +166,10 @@ namespace strategypattern
             }
             // Calculate queue based upon strategy
             queue = queueHandler.CalculateOptimalQueue(requests.ToList(), head);
-            updateQueueBox();
+            UpdateQueueBox();
         }
 
-        private void updateQueueBox()
+        private void UpdateQueueBox()
         {
             if (queue == null)
             {
@@ -196,10 +199,33 @@ namespace strategypattern
             RequestedSectorsTextBox.Text = displayText;
         }
 
-        private void updateHeadDisplay()
+        private void UpdateHeadDisplay()
         {
             headLabel.Content = head.ToString();
             headSlider.Value = head;
+        }
+
+        private void RandomIOBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Add random IO
+            for(int i= 0; i < 10; i++)
+            {
+                requests.Add(new Request(randomGenerator.Next(0, driveSize)));
+            }
+            UpdateRequestedSectorsTextBox();
+            UpdateQueue();
+        }
+
+        private void ConsecutiveIO_Click(object sender, RoutedEventArgs e)
+        {
+            // Add consecutive io
+            int[] arr = { 10000, 50000, 74310, 29087, 450425, 515023, 1101240 };
+            foreach(int i in arr )
+            {
+                requests.Add(new Request(i));
+            }
+            UpdateRequestedSectorsTextBox();
+            UpdateQueue();
         }
     }
 }

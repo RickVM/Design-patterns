@@ -59,5 +59,14 @@ namespace diskScheduler.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1024000.
+        /// </summary>
+        internal static string driveSize {
+            get {
+                return ResourceManager.GetString("driveSize", resourceCulture);
+            }
+        }
     }
 }
