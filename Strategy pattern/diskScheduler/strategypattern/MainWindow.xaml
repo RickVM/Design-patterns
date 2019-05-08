@@ -38,6 +38,7 @@
         <Label x:Name="queueLabel" Content="Queue" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,183,0,0"/>
         <Button x:Name="randomIOBtn" Content="Random IO" HorizontalAlignment="Left" Margin="147,10,0,0" VerticalAlignment="Top" Width="111" Click="RandomIOBtn_Click" Height="25"/>
         <Button x:Name="consecutiveIOBtn" Content="Consecutive IO" HorizontalAlignment="Left" Margin="147,40,0,0" VerticalAlignment="Top" Width="111" Click="ConsecutiveIO_Click" Height="25"/>
+        <Button x:Name="startStopBtn" Content="Start/Stop -Head" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="248" RenderTransformOrigin="-1.29,0.318" Click="startStopBtn_Click"/>
 
     </Grid>
 </Window>

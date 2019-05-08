@@ -21,10 +21,12 @@ namespace diskScheduler
     /// </summary>
     public partial class MainWindow : Window
     {
+        int head;
+        bool running;
         List<Request> requests;
         List<int> queue;
         Random randomGenerator;
-        int head;
+
         DispatcherTimer timer;
         static int driveSize; // Also edit slider range in window
         int headSpeed = 1000;
@@ -42,6 +44,7 @@ namespace diskScheduler
 
             queueHandler = new FirstComeFirstServe();
             UpdateHeadDisplay();
+            running = true;
 
             // Start UI timer
             timer = new DispatcherTimer();
@@ -52,32 +55,36 @@ namespace diskScheduler
 
         public void HandleTick(object sender, EventArgs e)
         {
-            if(queue.Count > 0)
+            if (running)
             {
-                // Move towards requested sector
-                int nextSector = queue[0];
-                // Account for over / underscan.
-                if(ValsAreWithin(head, nextSector, headSpeed))
+                if (queue.Count > 0)
                 {
-                    head = nextSector;
-                    requests.RemoveAll(request => request.sector == head);
-                    UpdateRequestedSectorsTextBox();
-                    UpdateQueue();
-                } else
-                {
-                    if (nextSector > head)
+                    // Move towards requested sector
+                    int nextSector = queue[0];
+                    // Account for over / underscan.
+                    if (ValsAreWithin(head, nextSector, headSpeed))
                     {
-
-                        head += headSpeed;
-                     
+                        head = nextSector;
+                        requests.RemoveAll(request => request.sector == head);
+                        UpdateRequestedSectorsTextBox();
+                        UpdateQueue();
                     }
                     else
                     {
-                        head -= headSpeed;
+                        if (nextSector > head)
+                        {
+
+                            head += headSpeed;
+
+                        }
+                        else
+                        {
+                            head -= headSpeed;
+                        }
                     }
                 }
+                UpdateHeadDisplay();
             }
-            UpdateHeadDisplay();
         }
 
         /// <summary>
@@ -226,6 +233,11 @@ namespace diskScheduler
             }
             UpdateRequestedSectorsTextBox();
             UpdateQueue();
+        }
+
+        private void startStopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            running = !running;
         }
     }
 }
