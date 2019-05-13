@@ -1,0 +1,16 @@
+﻿<Window x:Class="App.WeatherDisplay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App"
+        mc:Ignorable="d"
+        Title="WeatherDisplay" Height="260.667" Width="342.667">
+    <Grid>
+        <Label x:Name="labelCity" Content="City: " HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelVisibility" Content="visibility" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
+        <Label x:Name="labelTemperature" Content="Temperature:" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
+        <Label x:Name="labelDescription" Content="Weather:" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
+
+    </Grid>
+</Window>

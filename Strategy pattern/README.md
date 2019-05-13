@@ -4,7 +4,6 @@
 
 This document is part of a series of documents I will create as part of my studies of Design patterns.  
 In these documents I will touch the topic of what I learned and I will further put it to practice giving by an as relevant possible example.  
-Furthermore at the end of my Semester, February 2018, I might revisit some of these documents to shed light on patterns that I was able to use during my projects.
 
 **What I learned**
 

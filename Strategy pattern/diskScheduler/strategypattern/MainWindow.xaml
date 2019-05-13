@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:diskScheduler"
-        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="diskScheduler.MainWindow"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="DiskScheduler" x:Class="diskScheduler.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="329.015" Width="488.558">
+        Title="DiskScheduler" Height="392.461" Width="488.558">
     <Window.Resources>
         <System:Double x:Key="driveSize">1024000</System:Double>
     </Window.Resources>
@@ -27,15 +27,15 @@
         <Label x:Name="label" Content="Strategy type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="310,10,0,0"/>
         <Button x:Name="randomRequestBtn" Content="Randomize request" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="111" Click="RandomRequestBtn_Click" Height="25"/>
         <Button x:Name="submitRequestBtn" Content="Submit request" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="111" Click="SubmitRequestBtn_Click" Height="25"/>
-        <TextBox x:Name="requestTextBox" HorizontalAlignment="Left" Height="21" Margin="8,109,0,0" TextWrapping="Wrap" Text="Request" VerticalAlignment="Top" Width="452"/>
-        <Label x:Name="requestLabel" Content="Request" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,83,0,0"/>
-        <TextBox x:Name="RequestedSectorsTextBox" HorizontalAlignment="Left" Height="22" Margin="8,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="452"/>
-        <Label x:Name="requestsLabel" Content="Requested sectors" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,135,0,0"/>
-        <Slider x:Name="headSlider" HorizontalAlignment="Left" Margin="8,260,0,0" VerticalAlignment="Top" Width="449" IsSelectionRangeEnabled="True" Maximum="{DynamicResource driveSize}"/>
-        <Label x:Name="headLabel" Content="Head position:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,234,0,0"/>
-        <Label x:Name="headPositionLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,234,0,0"/>
-        <TextBox x:Name="queueTextBox" HorizontalAlignment="Left" Height="22" Margin="8,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="452"/>
-        <Label x:Name="queueLabel" Content="Queue" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,183,0,0"/>
+        <TextBox x:Name="requestTextBox" HorizontalAlignment="Left" Height="21" Margin="10,118,0,0" TextWrapping="Wrap" Text="Request" VerticalAlignment="Top" Width="452"/>
+        <Label x:Name="requestLabel" Content="Request" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,92,0,0" RenderTransformOrigin="0.618,2.413"/>
+        <TextBox x:Name="RequestedSectorsTextBox" HorizontalAlignment="Left" Height="42" Margin="10,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="452"/>
+        <Label x:Name="requestsLabel" Content="Requested sectors" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,139,0,0"/>
+        <Slider x:Name="headSlider" HorizontalAlignment="Left" Margin="10,319,0,0" VerticalAlignment="Top" Width="449" IsSelectionRangeEnabled="True" Maximum="{DynamicResource driveSize}"/>
+        <Label x:Name="headLabel" Content="Head position:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,285,0,0"/>
+        <Label x:Name="headPositionLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="101,285,0,0"/>
+        <TextBox x:Name="queueTextBox" HorizontalAlignment="Left" Height="42" Margin="10,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="452"/>
+        <Label x:Name="queueLabel" Content="Queue" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,217,0,0"/>
         <Button x:Name="randomIOBtn" Content="Random IO" HorizontalAlignment="Left" Margin="147,10,0,0" VerticalAlignment="Top" Width="111" Click="RandomIOBtn_Click" Height="25"/>
         <Button x:Name="consecutiveIOBtn" Content="Consecutive IO" HorizontalAlignment="Left" Margin="147,40,0,0" VerticalAlignment="Top" Width="111" Click="ConsecutiveIO_Click" Height="25"/>
         <Button x:Name="startStopBtn" Content="Start/Stop -Head" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="248" RenderTransformOrigin="-1.29,0.318" Click="startStopBtn_Click"/>

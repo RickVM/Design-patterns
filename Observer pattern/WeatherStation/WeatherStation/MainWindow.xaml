@@ -1,0 +1,13 @@
+﻿<Window x:Class="App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherStation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="buttonGetWeatherData" Content="Update the weather!" HorizontalAlignment="Left" Margin="231,88,0,0" VerticalAlignment="Top" Width="156" Height="21" Click="button_Click_GetWeather"/>
+        <Button x:Name="buttonShowWeather" Content="Show me the weather!" HorizontalAlignment="Left" Margin="405,88,0,0" VerticalAlignment="Top" Width="167" Click="button_Click_ShowWeather"/>
+    </Grid>
+</Window>
