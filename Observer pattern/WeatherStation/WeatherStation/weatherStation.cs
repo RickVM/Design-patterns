@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Windows.Threading;
 
 namespace App
 {
@@ -15,6 +16,9 @@ namespace App
         private static string baseUrl = "http://api.openweathermap.org/data/2.5/weather";
         private static string apiKey = "684fea935c1754da80748341e4f700bd";
         public string City { get; }
+        DispatcherTimer timer;
+        private LocalWeather weather; // Save weather to save api limited api available, since api updates only every 10 mins
+
         public WeatherStation(string City)
         {
             observers = new List<IObserver>();
@@ -23,6 +27,13 @@ namespace App
             {
                 BaseAddress = new Uri(baseUrl)
             };
+
+            timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(updateWeatherStation);
+            timer.Interval = new TimeSpan(0, 10, 0); // Used api refreshes only every 10 mins.
+            timer.Start();
+
+            updateWeatherStation(null, null);
         }
 
         public void RegisterSubscriber(IObserver observer)
@@ -47,6 +58,11 @@ namespace App
             }
         }
 
+        public LocalWeather pullWeather()
+        {
+            return weather;
+        }
+
         public async Task<LocalWeather> GetWeather()
         {
             LocalWeather weather = null;
@@ -56,6 +72,17 @@ namespace App
                 weather = await res.Content.ReadAsAsync<LocalWeather>();
             }
             return weather;
+        }
+
+        private async void updateWeatherStation(object sender, EventArgs e)
+        {
+            LocalWeather w = await GetWeather();
+            if(w == null)
+            {
+                return;
+            }
+            weather = w;
+            NotifySubscribers();
         }
     }
 }

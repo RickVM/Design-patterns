@@ -5,9 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeatherStation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="buttonGetWeatherData" Content="Update the weather!" HorizontalAlignment="Left" Margin="231,88,0,0" VerticalAlignment="Top" Width="156" Height="21" Click="button_Click_GetWeather"/>
-        <Button x:Name="buttonShowWeather" Content="Show me the weather!" HorizontalAlignment="Left" Margin="405,88,0,0" VerticalAlignment="Top" Width="167" Click="button_Click_ShowWeather"/>
+        Title="MainWindow" Height="100.919" Width="435.38">
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.139"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Button x:Name="buttonStartStation" Content="Start weather station" HorizontalAlignment="Left" Margin="214,28,0,0" VerticalAlignment="Top" Width="167" Click="button_Click_StartWeatherStation"/>
+        <Label x:Name="labelCity" Content="Pick a city:" HorizontalAlignment="Left" Margin="9,21,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxCity" HorizontalAlignment="Left" Height="23" Margin="79,25,0,0" TextWrapping="Wrap" Text="Eindhoven" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

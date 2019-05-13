@@ -25,6 +25,7 @@ namespace App
             InitializeComponent();
             this.weatherStation = weatherStation;
             weatherStation.RegisterSubscriber(this);
+            Update(weatherStation.pullWeather()); // Pull latest update
             //this.weatherStation = weatherStation;
             //this.weatherStation = weatherStation;
         }
@@ -32,10 +33,10 @@ namespace App
         public void Update(LocalWeather weather)
         {
             labelCity.Content = $"city:  {weather.Name}";
-            labelTemperature.Content = $"Tempature(F): {weather.Main.Temp}";
+            labelTemperature.Content = $"Tempature: {weather.Main.Temp}";
             labelVisibility.Content = $"visibility: {weather.Visibility}";
-
-            string weatherDescription = "Description: ";
+            labelWind.Content = $"Wind speed: {weather.Wind.Speed}";
+            string weatherDescription = "Weather: ";
             foreach(Weather w in weather.Weather)
             {
                 weatherDescription += $" {w.Description}";

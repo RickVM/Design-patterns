@@ -63,11 +63,14 @@
     </ApplicationDefinition>
     <Compile Include="IObservable.cs" />
     <Compile Include="IObserver.cs" />
-    <Compile Include="Weather.cs" />
+    <Compile Include="LocalWeather.cs" />
     <Compile Include="WeatherDisplay.xaml.cs">
       <DependentUpon>WeatherDisplay.xaml</DependentUpon>
     </Compile>
     <Compile Include="WeatherStation.cs" />
+    <Compile Include="WeatherStationDisplay.xaml.cs">
+      <DependentUpon>WeatherStationDisplay.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,6 +84,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="WeatherDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeatherStationDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

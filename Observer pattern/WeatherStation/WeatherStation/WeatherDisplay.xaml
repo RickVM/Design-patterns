@@ -8,9 +8,10 @@
         Title="WeatherDisplay" Height="260.667" Width="342.667">
     <Grid>
         <Label x:Name="labelCity" Content="City: " HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelVisibility" Content="visibility" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
+        <Label x:Name="labelVisibility" Content="visibility" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
         <Label x:Name="labelTemperature" Content="Temperature:" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
         <Label x:Name="labelDescription" Content="Weather:" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
+        <Label x:Name="labelWind" Content="Wind:" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
 
     </Grid>
 </Window>

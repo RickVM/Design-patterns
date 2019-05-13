@@ -11,5 +11,6 @@ namespace App
         void RegisterSubscriber(IObserver observer);
         void DeleteSubscriber(IObserver observer);
         void NotifySubscribers();
+        LocalWeather pullWeather(); // Pull mechanism
     }
 }

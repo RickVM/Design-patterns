@@ -20,22 +20,20 @@ namespace App
     /// </summary>
     public partial class MainWindow : Window
     {
-        private WeatherStation weatherStation;
         public MainWindow()
         {
             InitializeComponent();
-            weatherStation = new WeatherStation("Eindhoven");
         }
 
-        private void button_Click_GetWeather(object sender, RoutedEventArgs e)
+        private void button_Click_StartWeatherStation(object sender, RoutedEventArgs e)
         {
-            weatherStation.NotifySubscribers();
-        }
-
-        private void button_Click_ShowWeather(object sender, RoutedEventArgs e)
-        {
-            WeatherDisplay display = new WeatherDisplay(weatherStation);
-            display.Show();
+            string city = textBoxCity.Text;
+            if (string.IsNullOrEmpty(city))
+            {
+                MessageBox.Show("City cannot be null or empty!");
+            }
+            WeatherStationDisplay wsd = new WeatherStationDisplay(city);
+            wsd.Show();
         }
     }
 }
