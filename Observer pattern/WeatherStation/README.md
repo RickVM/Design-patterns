@@ -12,6 +12,7 @@ Every 10 minutes the online api refreshes its data, after the same amount of tim
 Via the interface you can force both the observable as the observer to push/pull data.  
 
 **Issues**
+
 We query openweathermaps with the chosen city, there is no checking whether this city exists! 
 Thus if you create a Station from a city that does not exist / is not known no data will be shown.  
 In that case try another ;)
