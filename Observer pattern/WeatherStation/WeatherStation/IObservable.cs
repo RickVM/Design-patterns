@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App
 {
-    interface IObservable
+    public interface IObservable
     {
         void Subscribe(IObserver observer);
         void Unsubscribe(IObserver observer);

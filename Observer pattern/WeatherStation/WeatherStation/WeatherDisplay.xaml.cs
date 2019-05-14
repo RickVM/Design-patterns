@@ -20,23 +20,23 @@ namespace App
     /// </summary>
     public partial class WeatherDisplay : Window, IObserver
     {
-        private WeatherStation weatherStation;
-        public WeatherDisplay(WeatherStation weatherStation)
+        private IObservable weatherStation;
+
+        public WeatherDisplay(IObservable weatherStation)
         {
             InitializeComponent();
             this.weatherStation = weatherStation;
             weatherStation.Subscribe(this);
+            this.Closing += new CancelEventHandler(WeatherDisplay_Closing);
             Update(weatherStation.PullWeather()); // Pull latest update
-
-            Application.Current.MainWindow.Closing += new CancelEventHandler(WeatherDisplay_Closing);
-
-
         }
 
         void WeatherDisplay_Closing(object sender, CancelEventArgs e)
         {
             weatherStation.Unsubscribe(this);
         }
+
+
 
         public void Update(LocalWeather weather)
         {

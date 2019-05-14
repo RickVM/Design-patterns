@@ -61,13 +61,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IObservable.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="LocalWeather.cs" />
     <Compile Include="WeatherDisplay.xaml.cs">
       <DependentUpon>WeatherDisplay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WeatherStation.cs" />
     <Compile Include="WeatherStationDisplay.xaml.cs">
       <DependentUpon>WeatherStationDisplay.xaml</DependentUpon>
     </Compile>
