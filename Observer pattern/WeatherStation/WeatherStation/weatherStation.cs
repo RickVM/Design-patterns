@@ -29,18 +29,18 @@ namespace App
             };
 
             timer = new DispatcherTimer();
-            timer.Tick += new EventHandler(updateWeatherStation);
+            timer.Tick += new EventHandler(UpdateWeatherStation);
             timer.Interval = new TimeSpan(0, 10, 0); // Used api refreshes only every 10 mins.
             timer.Start();
 
-            updateWeatherStation(null, null);
+            UpdateWeatherStation(null, null);
         }
 
-        public void RegisterSubscriber(IObserver observer)
+        public void Subscribe(IObserver observer)
         {
             observers.Add(observer);
         }
-        public void DeleteSubscriber(IObserver observer)
+        public void Unsubscribe(IObserver observer)
         {
             observers.Remove(observer);
         }
@@ -58,9 +58,14 @@ namespace App
             }
         }
 
-        public LocalWeather pullWeather()
+        public LocalWeather PullWeather()
         {
             return weather;
+        }
+
+        public int nrOfSubscribers()
+        {
+            return observers.Count();
         }
 
         public async Task<LocalWeather> GetWeather()
@@ -74,7 +79,7 @@ namespace App
             return weather;
         }
 
-        private async void updateWeatherStation(object sender, EventArgs e)
+        private async void UpdateWeatherStation(object sender, EventArgs e)
         {
             LocalWeather w = await GetWeather();
             if(w == null)

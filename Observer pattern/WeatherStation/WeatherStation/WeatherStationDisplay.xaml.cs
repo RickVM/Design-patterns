@@ -21,10 +21,12 @@ namespace App
     public partial class WeatherStationDisplay : Window
     {
         private WeatherStation weatherStation;
+
         public WeatherStationDisplay(string weatherStation)
         {
             InitializeComponent();
             this.weatherStation = new WeatherStation(weatherStation);
+            labelStation.Content = $"Station: {weatherStation}";
         }
 
         private void button_Click_GetWeather(object sender, RoutedEventArgs e)
@@ -36,6 +38,12 @@ namespace App
         {
             WeatherDisplay display = new WeatherDisplay(weatherStation);
             display.Show();
+            updateObserverLabel();
+        }
+
+        private void updateObserverLabel()
+        {
+            labelSubscribers.Content = $"Subscribers: {weatherStation.ToString()}";
         }
     }
 }

@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:App"
         mc:Ignorable="d"
-        Title="WeatherDisplay" Height="260.667" Width="342.667">
+        Title="WeatherDisplay" Height="260.667" Width="303.334">
     <Grid>
-        <Label x:Name="labelCity" Content="City: " HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelVisibility" Content="visibility" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
-        <Label x:Name="labelTemperature" Content="Temperature:" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
-        <Label x:Name="labelDescription" Content="Weather:" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
-        <Label x:Name="labelWind" Content="Wind:" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
+        <Label x:Name="labelCity" Content="City: " HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelVisibility" Content="visibility" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
+        <Label x:Name="labelTemperature" Content="Temperature:" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
+        <Label x:Name="labelDescription" Content="Weather:" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
+        <Label x:Name="labelWind" Content="Wind:" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.557,2.313"/>
+        <Button x:Name="buttonRefreshData" Content="Refresh data" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" Width="75" Click="ButtonRefreshData_Click"/>
+        <Label x:Name="labelLastUpdate" Content="Last update:" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.815,0.551"/>
 
     </Grid>
 </Window>

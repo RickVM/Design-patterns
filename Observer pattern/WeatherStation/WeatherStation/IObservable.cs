@@ -8,9 +8,9 @@ namespace App
 {
     interface IObservable
     {
-        void RegisterSubscriber(IObserver observer);
-        void DeleteSubscriber(IObserver observer);
+        void Subscribe(IObserver observer);
+        void Unsubscribe(IObserver observer);
         void NotifySubscribers();
-        LocalWeather pullWeather(); // Pull mechanism
+        LocalWeather PullWeather(); // Pull mechanism
     }
 }

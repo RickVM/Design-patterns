@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,14 +25,26 @@ namespace App
         {
             InitializeComponent();
             this.weatherStation = weatherStation;
-            weatherStation.RegisterSubscriber(this);
-            Update(weatherStation.pullWeather()); // Pull latest update
-            //this.weatherStation = weatherStation;
-            //this.weatherStation = weatherStation;
+            weatherStation.Subscribe(this);
+            Update(weatherStation.PullWeather()); // Pull latest update
+
+            Application.Current.MainWindow.Closing += new CancelEventHandler(WeatherDisplay_Closing);
+
+
+        }
+
+        void WeatherDisplay_Closing(object sender, CancelEventArgs e)
+        {
+            weatherStation.Unsubscribe(this);
         }
 
         public void Update(LocalWeather weather)
         {
+            if(weather == null)
+            {
+                return;
+            }
+            labelLastUpdate.Content = $"Last updated: {DateTime.Now.ToString()}";
             labelCity.Content = $"city:  {weather.Name}";
             labelTemperature.Content = $"Tempature: {weather.Main.Temp}";
             labelVisibility.Content = $"visibility: {weather.Visibility}";
@@ -44,5 +57,16 @@ namespace App
             labelDescription.Content = weatherDescription;
         }
 
+        private void ButtonRefreshData_Click(object sender, RoutedEventArgs e)
+        {
+            LocalWeather w = weatherStation.PullWeather();
+            if(w == null)
+            {
+                return;
+            }
+            Update(w);
+        }
+
+        
     }
 }
