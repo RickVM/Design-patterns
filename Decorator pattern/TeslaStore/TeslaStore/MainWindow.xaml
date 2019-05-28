@@ -1,0 +1,23 @@
+﻿<Window x:Class="TeslaStore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeslaStore"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="335.834" Width="432.181" Loaded="Window_Loaded">
+    <Grid>
+        <RadioButton x:Name="radioButtonModelX" Content="Model X" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" GroupName="carType" Checked="RadioButtonModelX_Checked"/>
+        <RadioButton x:Name="radioButtonModel3" Content="Model 3" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Checked="RadioButtonModel3_Checked" GroupName="carType" IsChecked="True"/>
+        <Label x:Name="label" Content="Car" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="featureLabel" Content="Features: " HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="priceLabel" Content="Price: " HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBoxLongRange" Content="Long Range" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Checked="CheckBoxLongRange_Checked" Unchecked="CheckBoxLongRange_Unchecked"/>
+        <CheckBox x:Name="checkBoxPerformance" Content="Performance" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top" Checked="CheckBoxPerformance_Checked" Unchecked="CheckBoxPerformance_Unchecked"/>
+        <RadioButton x:Name="radioButtonModelS" Content="Model S" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Checked="RadioButtonModelS_Checked" GroupName="carType" IsChecked="True"/>
+        <RadioButton x:Name="radioButtonModelY" Content="Model Y" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" GroupName="carType" Checked="RadioButtonModelY_Checked"/>
+        <CheckBox x:Name="checkBoxTowbar" Content="Towbar" HorizontalAlignment="Left" Margin="10,191,0,0" VerticalAlignment="Top" Checked="CheckBoxTowbar_Checked" Unchecked="CheckBoxTowbar_Unchecked"/>
+        <CheckBox x:Name="checkBoxFullAutopilot" Content="Full autopilot" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Checked="CheckBoxFullAutopilot_Checked" Unchecked="CheckBoxFullAutopilot_Unchecked"/>
+
+    </Grid>
+</Window>
