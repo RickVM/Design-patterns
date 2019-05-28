@@ -110,25 +110,25 @@ namespace TeslaStore
 
         private void CheckBoxLongRange_Unchecked(object sender, RoutedEventArgs e)
         {
-            car = car.RemoveUpgrade(typeof(LongRange));
+            car = car.RemoveDecorator(typeof(LongRange));
             updateDisplay();
         }
 
         private void CheckBoxPerformance_Unchecked(object sender, RoutedEventArgs e)
         {
-            car = car.RemoveUpgrade(typeof(Performance));
+            car = car.RemoveDecorator(typeof(Performance));
             updateDisplay();
         }
 
         private void CheckBoxFullAutopilot_Unchecked(object sender, RoutedEventArgs e)
         {
-            car = car.RemoveUpgrade(typeof(FullAutoPilot));
+            car = car.RemoveDecorator(typeof(FullAutoPilot));
             updateDisplay();
         }
 
         private void CheckBoxTowbar_Unchecked(object sender, RoutedEventArgs e)
         {
-            car = car.RemoveUpgrade(typeof(Towbar));
+            car = car.RemoveDecorator(typeof(Towbar));
             updateDisplay();
         }
     }

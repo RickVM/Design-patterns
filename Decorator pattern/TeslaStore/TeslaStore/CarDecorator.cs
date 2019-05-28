@@ -10,7 +10,7 @@ namespace TeslaStore
     abstract class CarDecorator
     {
 
-        public CarDecorator Component { get; set; } // Public getter to enable dynamic removal at runtime
+        public CarDecorator Component { get; protected set; } // Public getter to enable dynamic removal at runtime
 
         // Protected members ensure that only the derived class can access these variables. 
         // If we set them during construction we can use them in our default format.
@@ -42,8 +42,9 @@ namespace TeslaStore
             }
         }
 
-        // Returning a CarDecorator is required to support removal of the master decorator by returning the child.
-        public CarDecorator RemoveUpgrade(Type toBeRemovedComponent)
+        // Returning a CarDecorator is required to support removal of the master decorator. This is done by returning the child.
+        // In all other cases the requested object will be removed and the original master will be returned.
+        public CarDecorator RemoveDecorator(Type toBeRemovedComponent)
         {
             if (Component == null)
             {
@@ -61,7 +62,7 @@ namespace TeslaStore
             }
             else
             {
-                Component.RemoveUpgrade(toBeRemovedComponent);
+                Component.RemoveDecorator(toBeRemovedComponent);
                 return this;
             }
         }
