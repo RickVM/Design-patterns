@@ -41,7 +41,7 @@ namespace TeslaStore
                 return;
             }
             featureLabel.Content = $"Features: {car.Description}";
-            priceLabel.Content = $"Price: {car.Price}";
+            priceLabel.Content = $"Price: € {car.Price}";
         }
 
         void uncheckFeatures()

@@ -28,7 +28,6 @@ namespace TeslaStore
 
     class FullAutoPilot : CarDecorator
     {
-
         public FullAutoPilot(CarDecorator component)
         {
             this.Component = component;
@@ -39,7 +38,6 @@ namespace TeslaStore
 
     class Towbar : CarDecorator
     {
-
         public Towbar(CarDecorator component)
         {
             this.Component = component;

@@ -22,7 +22,7 @@ namespace TeslaStore
             {
                 // Since base cars are CarDecators without components we need to check.
                 string baseComponentDescriptor = (this.Component != null ? this.Component.Description : "");
-                return $"{baseComponentDescriptor}, {this.description}";
+                return $"{baseComponentDescriptor} {this.description},";
             }
             protected set
             {

@@ -35,7 +35,6 @@ namespace TeslaStore
             this.Price = 85000;
             this.Description = "Model X";
         }
-
     }
 
     class ModelY : CarDecorator

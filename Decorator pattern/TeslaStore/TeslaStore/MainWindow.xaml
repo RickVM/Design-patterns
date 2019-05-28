@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeslaStore"
         mc:Ignorable="d"
-        Title="MainWindow" Height="335.834" Width="432.181" Loaded="Window_Loaded">
+        Title="MainWindow" Height="335.834" Width="552.181" Loaded="Window_Loaded">
     <Grid>
         <RadioButton x:Name="radioButtonModelX" Content="Model X" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" GroupName="carType" Checked="RadioButtonModelX_Checked"/>
         <RadioButton x:Name="radioButtonModel3" Content="Model 3" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Checked="RadioButtonModel3_Checked" GroupName="carType" IsChecked="True"/>
