@@ -10,35 +10,38 @@ namespace TeslaStore
     abstract class CarDecorator
     {
 
-        public CarDecorator Component { get; protected set; } // Public getter to enable dynamic removal at runtime
+        protected CarDecorator Component { get; set; } // Public getter to enable dynamic removal at runtime
 
         // Protected members ensure that only the derived class can access these variables. 
         // If we set them during construction we can use them in our default format.
-        protected string descriptor;
-        protected double cost;
-
-        private void setCost(double cost)
-        {
-            this.cost = cost;
-        }
-
+        //protected string descriptor;
+        private string description;
         public string Description
         {
             get
             {
                 // Since base cars are CarDecators without components we need to check.
-                string baseComponentDescriptor = (Component != null ? Component.Description : "");
-                return $"{baseComponentDescriptor}, {descriptor}";
+                string baseComponentDescriptor = (this.Component != null ? this.Component.Description : "");
+                return $"{baseComponentDescriptor}, {this.description}";
+            }
+            protected set
+            {
+                this.description = value;
             }
         }
 
+        private double price;
         public double Price
         {
             get
             {
                 // Since base cars are CarDecators without components we need to check.
-                double baseComponentPrice = (Component != null ? Component.Price : 0);
-                return baseComponentPrice + cost;
+                double baseComponentPrice = (this.Component != null ? this.Component.Price : 0);
+                return baseComponentPrice + this.price;
+            }
+            protected set
+            {
+                this.price = value;
             }
         }
 
@@ -46,14 +49,14 @@ namespace TeslaStore
         // In all other cases the requested object will be removed and the original master will be returned.
         public CarDecorator RemoveDecorator(Type toBeRemovedComponent)
         {
-            if (Component == null)
+            if (this.Component == null)
             {
                 //Do Nothing, no wrapped classes available
                 return this;
             }
             else if (this.GetType() == toBeRemovedComponent)  // Master decorator needs to be removed
             {
-                return Component; // Return child;
+                return this.Component; // Return child;
             }
             else if (this.Component.GetType() == toBeRemovedComponent)
             {
@@ -62,7 +65,7 @@ namespace TeslaStore
             }
             else
             {
-                Component.RemoveDecorator(toBeRemovedComponent);
+                this.Component.RemoveDecorator(toBeRemovedComponent);
                 return this;
             }
         }

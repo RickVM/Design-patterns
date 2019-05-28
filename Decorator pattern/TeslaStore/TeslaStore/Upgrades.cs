@@ -11,8 +11,8 @@ namespace TeslaStore
         public LongRange(CarDecorator component)
         {
             this.Component = component;
-            this.cost = 10000;
-            this.descriptor = "Long range";
+            this.Price = 10000;
+            this.Description = "Long range";
         }
     }
 
@@ -21,8 +21,8 @@ namespace TeslaStore
         public Performance(CarDecorator component)
         {
             this.Component = component;
-            this.cost = 10000;
-            this.descriptor = "Performance";
+            this.Price = 10000;
+            this.Description = "Performance";
         }
     }
 
@@ -32,8 +32,8 @@ namespace TeslaStore
         public FullAutoPilot(CarDecorator component)
         {
             this.Component = component;
-            this.cost = 6400;
-            this.descriptor = "Full Autonomous driving";
+            this.Price = 6400;
+            this.Description = "Full Autonomous driving";
         }
     }
 
@@ -43,8 +43,8 @@ namespace TeslaStore
         public Towbar(CarDecorator component)
         {
             this.Component = component;
-            this.cost = 1080;
-            this.descriptor = "Towbar";
+            this.Price = 1080;
+            this.Description = "Towbar";
         }
     }
 

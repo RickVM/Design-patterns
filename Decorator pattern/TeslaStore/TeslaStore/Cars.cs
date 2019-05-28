@@ -12,8 +12,8 @@ namespace TeslaStore
         public ModelS()
         {
             this.Component = null;
-            this.cost = 79200;
-            this.descriptor = "Model S";
+            this.Price = 79200;
+            this.Description = "Model S";
         }
     }
 
@@ -22,8 +22,8 @@ namespace TeslaStore
         public Model3()
         {
             this.Component = null;
-            this.cost = 47800;
-            this.descriptor = "Model 3";
+            this.Price = 47800;
+            this.Description = "Model 3";
         }
     }
 
@@ -32,8 +32,8 @@ namespace TeslaStore
         public ModelX()
         {
             this.Component = null;
-            this.cost = 85000;
-            this.descriptor = "Model X";
+            this.Price = 85000;
+            this.Description = "Model X";
         }
 
     }
@@ -43,8 +43,8 @@ namespace TeslaStore
         public ModelY()
         {
             this.Component = null;
-            this.cost = 57000;
-            this.descriptor = "Model Y";
+            this.Price = 57000;
+            this.Description = "Model Y";
         }
     }
 
