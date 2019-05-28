@@ -10,4 +10,6 @@ I modified the default implementation, removed the ICar interface and also made 
 As you can see in my implementation there is also a change from the given suggestion since it is incorrect for the case when you want to remove the current master upgrade. For further information about this I'd suggest checking the RemoveDecorator function.  
 
 Having done this modification I am satisfied with the program.  
-Whilst I think this is a good 'decorator' solution for this case, it is possible that there are other ways/patterns to better solve this case without the decorator design pattern because of the modifications I had to make.
+Whilst I think this is a good 'decorator' solution for this case, it is possible and I think even likely that there are better ways/patterns to solve similar cases where removability is required.
+
+
