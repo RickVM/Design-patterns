@@ -22,12 +22,12 @@
         <Button x:Name="buttonLimousine" Content="Buy Limousine" HorizontalAlignment="Left" Margin="105,95,0,0" VerticalAlignment="Top" Width="94" Click="ButtonLimousine_Click"/>
         <Button x:Name="buttonHybrid" Content="Buy hybrid" HorizontalAlignment="Left" Margin="215,95,0,0" VerticalAlignment="Top" Width="75" Click="ButtonHybrid_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="buttonDrive" Content="Drive" HorizontalAlignment="Left" Margin="38,95,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDrive_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button x:Name="buttonDriveOffroad" Content="DriveOffRoad" HorizontalAlignment="Left" Margin="23.157,95,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDriveOffroad_Click" Grid.Column="2"/>
-        <Button x:Name="button_HaveChampagne" Content="HaveChampagne" HorizontalAlignment="Left" Margin="103.157,95,0,0" VerticalAlignment="Top" Width="99" Click="Button_HaveChampagne_Click" Grid.Column="2"/>
-        <Button x:Name="buttonElectric" Content="Electric" HorizontalAlignment="Left" Margin="207.157,95,0,0" VerticalAlignment="Top" Width="75" Click="ButtonElectric_Click" Grid.Column="2"/>
-        <Button x:Name="buttonGas" Content="Gas" HorizontalAlignment="Left" Margin="287.157,95,0,0" VerticalAlignment="Top" Width="75" Click="ButtonGas_Click" Grid.Column="2"/>
+        <Button x:Name="buttonDriveOffroad" Content="DriveOffRoad" HorizontalAlignment="Left" Margin="23.157,95,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDriveOffroad_Click" Grid.Column="2" Visibility="Hidden"/>
+        <Button x:Name="button_HaveChampagne" Content="HaveChampagne" HorizontalAlignment="Left" Margin="103.157,95,0,0" VerticalAlignment="Top" Width="99" Click="Button_HaveChampagne_Click" Grid.Column="2" Visibility="Hidden"/>
+        <Button x:Name="buttonElectric" Content="Electric" HorizontalAlignment="Left" Margin="207.157,95,0,0" VerticalAlignment="Top" Width="75" Click="ButtonElectric_Click" Grid.Column="2" Visibility="Hidden"/>
+        <Button x:Name="buttonGas" Content="Gas" HorizontalAlignment="Left" Margin="287.157,95,0,0" VerticalAlignment="Top" Width="75" Click="ButtonGas_Click" Grid.Column="2" Visibility="Hidden"/>
         <ListBox x:Name="Log" HorizontalAlignment="Left" Height="243" Margin="14,157,0,0" VerticalAlignment="Top" Width="770" Grid.ColumnSpan="3"/>
-        <Label x:Name="labelActiveCar" Content="Drive a:" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="labelActiveCar" Content="Drive a:" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2" Width="154"/>
 
     </Grid>
 </Window>

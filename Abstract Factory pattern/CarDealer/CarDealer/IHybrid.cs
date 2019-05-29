@@ -18,7 +18,7 @@ namespace CarDealerApp
 
         public string Drive()
         {
-            return $"Driving smooth and silently. Enjoying a {this.Characteristics} Hybrid.";
+            return $"Driving smooth and silently on {fuel}. Enjoying a {this.Characteristics} Hybrid.";
         }
 
         public string DriveOnGas()

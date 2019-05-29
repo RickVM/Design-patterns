@@ -56,7 +56,7 @@ namespace CarDealerApp
 
         private void ButtonSuv_Click(object sender, RoutedEventArgs e)
         {
-            if(carDealer == null)
+            if (carDealer == null)
             {
                 MessageBox.Show("You need a dealer to buy a car. :)");
                 return;
@@ -100,12 +100,17 @@ namespace CarDealerApp
 
         private void ButtonDrive_Click(object sender, RoutedEventArgs e)
         {
+            if (car == null) 
+            {
+                MessageBox.Show("How are you planning on driving without a car?");
+                return;
+            }
             log(car.Drive());
         }
 
         private void ButtonDriveOffroad_Click(object sender, RoutedEventArgs e)
         {
-            if(car is ISuv suv)
+            if (car is ISuv suv)
             {
                 log(suv.DriveOffRoad());
             }
@@ -113,7 +118,7 @@ namespace CarDealerApp
 
         private void Button_HaveChampagne_Click(object sender, RoutedEventArgs e)
         {
-            if(car is ILimousine limousine)
+            if (car is ILimousine limousine)
             {
                 log(limousine.HaveChampagne());
             }
@@ -121,7 +126,7 @@ namespace CarDealerApp
 
         private void ButtonElectric_Click(object sender, RoutedEventArgs e)
         {
-           if(car is IHybrid hybrid)
+            if (car is IHybrid hybrid)
             {
                 log(hybrid.DriveOnElectricity());
             }
@@ -129,7 +134,7 @@ namespace CarDealerApp
 
         private void ButtonGas_Click(object sender, RoutedEventArgs e)
         {
-            if(car is IHybrid hybrid)
+            if (car is IHybrid hybrid)
             {
                 log(hybrid.DriveOnGas());
             }
